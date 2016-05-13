@@ -45,7 +45,8 @@ io.on('connection', function(socket) {
     });
 
     socket.on('send', function(message) {//发送消息
-		io.sockets.emit('chat', socket.nickname, message);
+    	socket.broadcast.emit('chat', socket.nickname, message);
+		socket.emit('chat', socket.nickname, message,'me');//自己
 	});
 
     socket.on('disconnect', function(nickname) {//下线
@@ -54,7 +55,11 @@ io.on('connection', function(socket) {
 		socket.broadcast.emit('system', socket.nickname, users.length, 'logout');
 	});
 
-	
+	//接收用户发来的图片
+	socket.on('img', function(imgData) {
+		//通过一个newImg事件分发到除自己外的每个用户
+		socket.broadcast.emit('newImg', socket.nickname, imgData);
+	});
     
 });
 

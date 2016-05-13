@@ -8,7 +8,7 @@ html, body {
     height: 640px;
     padding: 5px;
     margin: 0 auto;
-    background-color: #ddd;
+    background-color: #B2B2B2;
 }
 #loginWrapper {
     position: fixed;
@@ -40,16 +40,40 @@ html, body {
 }
 #historyMsg {
     height: 400px;
-    background-color: #fff;
+    background-color: #F5F5F5;
     overflow: auto;
     padding: 2px;
 }
 #historyMsg img {
-    max-width: 99%;
+    max-width: 100px;
+    max-height: 100px;
+}
+.msgr{
+    text-align: right;
 }
 .timespan {
-    color: #ddd;
+    color: #8B8B8B;
 }
+.msgr .msg{
+    background: #9EEA6A;
+}
+.msgl .msg{
+    background: #CDD7E2;
+}
+.msg{
+    margin: 0 10px;
+    padding: 0 10px 0 10px;
+    display: inline-block;
+    /*background: #9EEA6A;*/
+    max-width: 320px;
+    line-height: 30px;
+    word-wrap: break-word;
+    border: 1px soild #EEEEEE;
+
+    -moz-border-radius: 3px; 
+    -webkit-border-radius: 3px; 
+}
+
 .items {
     height: 30px;
 }
